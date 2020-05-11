@@ -1,4 +1,4 @@
-import * as handTrack from "../node_modules/handtrackjs";
+import * as handTrack from "handtrackjs";
 
 navigator.getUserMedia =
 	navigator.getUserMedia ||
@@ -13,6 +13,7 @@ const modelParams = {
 	iouThreshold: 0.5, // ioU threshold for non-max suppression
 	scoreThreshold: 0.79, // confidence threshold for predictions.
 };
+
 
 let timeStart = new Date();
 let startStamp = timeStart.getTime();
