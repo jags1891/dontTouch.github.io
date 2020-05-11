@@ -1,4 +1,4 @@
-import * as handTrack from "handtrackjs";
+import * as handTrack from "../node_modules/handtrackjs";
 
 navigator.getUserMedia =
 	navigator.getUserMedia ||

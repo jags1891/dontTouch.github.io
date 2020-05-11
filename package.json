@@ -1,5 +1,6 @@
 {
 	"name": "handtrack",
+	"homepage": "http://jags1891.github.io/dontTouch",
 	"version": "1.0.0",
 	"description": "Remind people not to touch the face",
 	"main": "./src/index.js",
@@ -30,7 +31,9 @@
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "webpack-dev-server --open"
+		"dev": "webpack-dev-server --open",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"author": "Jagadeesh Bandlamudi",
 	"license": "ISC"
