@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Covid-help</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div class="container-sm" style="border: 1px solid #cecece;">
+			<div class="row" style="border: 1px solid #cecece;">
+				<div class="mx-auto">
+					<h4>Do not touch your face</h4>
+					<p>
+						This app hopes to help, by shouting at you if you touch your face.
+					</p>
+				</div>
+			</div>
+			<div
+				class="row"
+				style="border: 1px solid #cecece; background-color: blue;"
+			>
+				<div class="mx-auto">
+					<video id="video" autoplay muted></video>
+				</div>
+			</div>
+			<div class="row" style="border: 1px solid #cecece; font-size: smaller;">
+				<div class="col">
+					<label id="timeStart"><b>Start: </b></label>
+				</div>
+				<div class="col">
+					<label id="timeElapsed"></label>
+				</div>
+				<div class="col">
+					<label id="num"></label>
+				</div>
+			</div>
+
+			<div class="row" style="font-size: smaller;">
+				<div class="col">
+					<p>
+						This app uses a simple machine-learning algorithm to recognize each
+						individual user touching their face, by trackng their hand movemets
+						with the help of webcam.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<audio src="Sound.mp3" id="audio"></audio>
+		<canvas id="canvas"></canvas>
+
+		<script defer type="module" src="index.js"></script>
+	</body>
+</html>
