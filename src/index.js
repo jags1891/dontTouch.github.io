@@ -24,7 +24,6 @@ var timer; // for storing the interval (to stop or pause later if needed)
 var newDate = new Date();
 var newStamp = newDate.getTime();
 function updateClock() {
-	console.log("hello");
 	newDate = new Date();
 	newStamp = newDate.getTime();
 	var diff = Math.round((newStamp - startStamp) / 1000);
@@ -70,18 +69,22 @@ handTrack.load(modelParams).then((lmodel) => {
 	model = lmodel;
 });
 
+var videoConstraints = { audio: false, video: { width: 1280, height: 720 } };
+
 handTrack.startVideo(video).then((status) => {
 	if (status) {
-		navigator.getUserMedia(
-			{ video: {} },
-			(stream) => {
-				video.srcObject = stream;
+		navigator.mediaDevices
+			.getUserMedia(videoConstraints)
+			.then(function (mediaStream) {
+				video.srcObject = mediaStream;
 				setInterval(detect, 1000);
-			},
-			(err) => {
-				alert(err);
-			}
-		);
+				video.onloadedmetadata = function (e) {
+					video.play();
+				};
+			})
+			.catch(function (err) {
+				alert(err.name + ": " + err.message);
+			});
 	}
 });
 
