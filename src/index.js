@@ -77,11 +77,11 @@ handTrack.startVideo(video).then((status) => {
 			.getUserMedia(videoConstraints)
 			.then(function (mediaStream) {
 				video.srcObject = mediaStream;
-
-				video.onloadedmetadata = function (e) {
+				setInterval(detect, 1000);
+				/**video.onloadedmetadata = function (e) {
 					//video.play();
-					setInterval(detect, 1000);
-				};
+					
+				};*/
 			})
 			.catch(function (err) {
 				alert(err.name + ": " + err.message);
