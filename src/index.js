@@ -79,7 +79,7 @@ handTrack.startVideo(video).then((status) => {
 				video.srcObject = mediaStream;
 
 				video.onloadedmetadata = function (e) {
-					video.play();
+					//video.play();
 					setInterval(detect, 1000);
 				};
 			})
